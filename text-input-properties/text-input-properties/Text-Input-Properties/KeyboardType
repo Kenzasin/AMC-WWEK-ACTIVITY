@@ -1,0 +1,51 @@
+import React, {useState} from 'react'
+import{View, TextInput, StyleSheet, Alert} from 'react-native';
+
+const KeyboardType = () => {
+  const[email, setEmail] = useState('');
+  const[phone, setPhone] = useState('');
+
+
+  const HandleInputExample = () => {
+    Alert.alert('Submitted Text:' , text)
+  }
+
+return(
+  <View style ={styles.container}>
+    <TextInput
+    style = {styles.input}
+    placeholder="Enter Email"
+    keyboardType ="email-address"
+    onChangeText={(text) => setEmail(text)}
+    />
+    <TextInput
+    style = {styles.input}
+    placeholder="Enter Phone Number"
+    keyboardType ="phone-pad"
+    onChangeText={(text) => setText(text)}
+    />
+  </View>
+   );
+  };
+
+const styles = StyleSheet.create({
+
+container :{
+  flex: 1,
+  justifyContent: 'center',
+  alignItems: 'center',
+
+},
+ input: {
+   height: 40,
+   width: '80%',
+   borderColor: 'Dark gray',
+   borderWidth: 1,
+   paddingHorizontal: 10,
+   marginVertical: 10,
+   borderRadius: 20,
+ },
+
+});
+
+export default KeyboardType;

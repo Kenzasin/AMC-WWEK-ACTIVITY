@@ -1,0 +1,44 @@
+import React, {useState} from 'react'
+import{View, TextInput, StyleSheet, Alert} from 'react-native';
+
+const SubmitExample = () => {
+  const[text, setText] = useState('');
+
+
+  const HanddleSubmit = () => {
+    Alert.alert('Submitted Text:' , text)
+  }
+
+return(
+  <View style ={styles.container}>
+    <TextInput
+    style = {styles.input}
+    placeholder="Press Enter"
+    onChangeText={(value) => setText(value)}
+    returnKeyType="done"
+    onSubmitEditing={HanddleSubmit}
+     />
+  </View>
+   );
+};
+
+const styles = StyleSheet.create({
+
+container :{
+  flex: 1,
+  justifyContent: 'center',
+  alignItems: 'center',
+
+},
+ input: {
+   height: 40,
+   width: '80%',
+   borderColor: 'blue',
+   borderWidth: 1,
+   paddingHorizontal: 10,
+   borderRadius: 20,
+ },
+
+});
+
+export default SubmitExample;
